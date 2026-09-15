@@ -99,6 +99,9 @@
   .card{ background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px 24px; margin-top: 22px; border: 1px solid var(--line); }
   .card h2{ margin: 0 0 16px; font-size: 1.08rem; font-weight:800; color: var(--hazelnut-dark); display:flex; align-items:center; gap:8px; letter-spacing:-0.01em; }
   .card p{ line-height:1.65; }
+  .demo-video-wrap{ margin-top:14px; border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow); background:#000; }
+  .demo-video-wrap video{ width:100%; display:block; max-height:520px; background:#000; }
+  .demo-video-caption{ font-size:0.78rem; color:var(--ink-soft); margin-top:8px; }
   .demo-note{ font-size: 0.8rem; color: var(--amarena-dark); background: #FBEAE7; border: 1px solid var(--amarena); border-radius: 10px; padding: 8px 12px; margin-top: 10px; }
   .info-note{ font-size: 0.8rem; color: var(--pistachio-dark); background: #EAF2F8; border: 1px solid var(--pistachio); border-radius: 10px; padding: 8px 12px; margin-top: 10px; }
   .field-hint{ font-size: 0.72rem; color: var(--ink-soft); margin: 4px 0 0; text-transform: none; font-weight: 400; }
@@ -243,6 +246,17 @@
   </section>
 
   <section class="card">
+    <h2><span data-i18n="videoDemoTitle">🎬 Video demo</span></h2>
+    <p data-i18n="videoDemoText">Una rapida panoramica di alcuni mantecatori nuovi e usati disponibili sul mercato, per farsi un'idea prima di consultare gli annunci.</p>
+    <div class="demo-video-wrap">
+      <video controls preload="metadata" poster="demo-mantecatori-poster.jpg" playsinline>
+        <source src="demo-mantecatori.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p class="demo-video-caption" data-i18n="videoDemoCaption">Video dimostrativo — le attrezzature mostrate provengono da rivenditori terzi, a scopo illustrativo.</p>
+  </section>
+
+  <section class="card">
     <h2><span data-i18n="filterTitle">🧭 Filtra gli annunci</span></h2>
     <div class="filter-bar">
       <div class="field">
@@ -365,6 +379,9 @@ const I18N = {
     introText: "Un mercatino tra gelatieri per comprare e vendere attrezzature usate in buono stato: mantecatori, pastorizzatori, vetrine espositive, banchi gelato, abbattitori e congelatori. Filtra per categoria e stato, oppure pubblica un tuo annuncio.",
     demoNote: "⚠️ Gli annunci senza etichetta sono <strong>esempi dimostrativi</strong> per mostrare come funzionerà la sezione. Gli annunci con l'etichetta <strong>\"Annuncio reale\"</strong> provengono dal nostro partner Gennaro Eis GmbH e sono macchine effettivamente disponibili: prezzo e disponibilità vanno comunque riconfermati direttamente con il rivenditore.",
     liabilityNote: "ℹ️ Prezzo, foto, spedizione (spese a carico dell'acquirente, salvo diverso accordo) e ogni altra condizione vengono concordati <strong>direttamente tra venditore e acquirente</strong>. Il portale mette in contatto le parti ma non si assume alcuna responsabilità per gli annunci pubblicati né per le transazioni concluse.",
+    videoDemoTitle: "🎬 Video demo",
+    videoDemoText: "Una rapida panoramica di alcuni mantecatori nuovi e usati disponibili sul mercato, per farsi un'idea prima di consultare gli annunci.",
+    videoDemoCaption: "Video dimostrativo — le attrezzature mostrate provengono da rivenditori terzi, a scopo illustrativo.",
     filterTitle: "🧭 Filtra gli annunci",
     labelCerca: "Cerca", searchPh: "Es. mantecatore, vetrina…",
     labelCategoria: "Categoria", labelStato: "Stato",
@@ -411,6 +428,9 @@ const I18N = {
       { id:10, cat:'mantecatori', cond:'buono', titolo:'Mantecatore Carpigiani Labo 40 60 XPe (usato)', prezzo:'€ 10.999', citta:'Külsheim (Germania)', desc:'Mantecatore professionale, capacità 10,5 kg, resa 60 kg/h. Condizioni e disponibilità da riconfermare con il rivenditore.', foto:'usato-carpigiani-labo4060xpe.jpg', real:true, venditore:'Gennaro Eis GmbH', link:'https://www.gennaro-eis.de/gebrauchtes/eismaschinen/carpigiani/' },
       { id:11, cat:'mantecatori', cond:'buono', titolo:'Mantecatore combinato Coldelite Compacta 3002 RTX (usato)', prezzo:'€ 16.499', citta:'Külsheim (Germania)', desc:'Macchina combinata professionale, capacità 7,5 kg, resa 45 kg/h. Condizioni e disponibilità da riconfermare con il rivenditore.', foto:'usato-coldelite-compacta3002rtx.jpg', real:true, venditore:'Gennaro Eis GmbH', link:'https://www.gennaro-eis.de/gebrauchtes/eismaschinen/' },
       { id:12, cat:'pastorizzatori', cond:'buono', titolo:'Pastorizzatore Frigomat PEB 130 (usato)', prezzo:'€ 12.999', citta:'Külsheim (Germania)', desc:'Pastorizzatore professionale, capacità 130 litri. Condizioni e disponibilità da riconfermare con il rivenditore.', foto:'usato-frigomat-peb130.jpg', real:true, venditore:'Gennaro Eis GmbH', link:'https://www.gennaro-eis.de/gebrauchtes/eismaschinen/' },
+      { id:13, cat:'vetrine', cond:'buono', titolo:'Vetrina gelato Eisvitrine MX Flat', citta:'Erftstadt (Germania)', desc:'Disponibile in diverse misure (12, 16, 18, 20 o 24 pozzetti), larghezza da 1,23 a 2,30 m. Foto di riferimento del rivenditore: prezzo e disponibilità da richiedere.', foto:'usato-heica-vetrina-mxflat.png', demo:true },
+      { id:14, cat:'mantecatori', cond:'buono', titolo:'Macchina soft / frozen yogurt BC Easy 2', citta:'Erftstadt (Germania)', desc:'Macchina per gelato soft e frozen yogurt. Foto di riferimento del rivenditore: prezzo e disponibilità da richiedere.', foto:'usato-heica-frozenyogurt-bceasy2.png', demo:true },
+      { id:15, cat:'abbattitori', cond:'buono', titolo:'Schockfroster BF 19/15-CW Crio Chill', citta:'Erftstadt (Germania)', desc:'Abbattitore con funzione di shock frost e rapido raffreddamento, capacità 15–19,5 kg. Foto di riferimento del rivenditore: prezzo e disponibilità da richiedere.', foto:'usato-heica-schockfroster-crio-chill.png', demo:true },
     ],
   },
   de: {
@@ -424,6 +444,9 @@ const I18N = {
     introText: "Ein Marktplatz unter Gelatieri zum Kaufen und Verkaufen gebrauchter Ausrüstung in gutem Zustand: Rührmaschinen, Pasteurisierer, Vitrinen, Eistheken, Schockfroster und Tiefkühltruhen. Nach Kategorie und Zustand filtern oder eine eigene Anzeige veröffentlichen.",
     demoNote: "⚠️ Anzeigen ohne Kennzeichnung sind <strong>Beispiele zur Veranschaulichung</strong>. Anzeigen mit der Kennzeichnung <strong>\"Echtes Angebot\"</strong> stammen von unserem Partner Gennaro Eis GmbH und sind tatsächlich verfügbare Maschinen: Preis und Verfügbarkeit bitte direkt beim Händler bestätigen.",
     liabilityNote: "ℹ️ Preis, Fotos, Versand (Versandkosten trägt der Käufer, sofern nicht anders vereinbart) und alle weiteren Bedingungen werden <strong>direkt zwischen Verkäufer und Käufer</strong> vereinbart. Das Portal stellt den Kontakt her, übernimmt jedoch keinerlei Haftung für veröffentlichte Anzeigen oder abgeschlossene Geschäfte.",
+    videoDemoTitle: "🎬 Video-Demo",
+    videoDemoText: "Ein kurzer Überblick über einige neue und gebrauchte Rührmaschinen auf dem Markt, als erste Orientierung vor den Anzeigen.",
+    videoDemoCaption: "Demonstrationsvideo — die gezeigten Geräte stammen von Drittanbietern und dienen nur zur Veranschaulichung.",
     filterTitle: "🧭 Anzeigen filtern",
     labelCerca: "Suche", searchPh: "Z. B. Rührmaschine, Vitrine…",
     labelCategoria: "Kategorie", labelStato: "Zustand",
@@ -470,6 +493,9 @@ const I18N = {
       { id:10, cat:'mantecatori', cond:'buono', titolo:'Rührmaschine Carpigiani Labo 40 60 XPe (gebraucht)', prezzo:'€ 10.999', citta:'Külsheim', desc:'Profi-Rührmaschine, Kapazität 10,5 kg, Leistung 60 kg/h. Zustand und Verfügbarkeit bitte direkt beim Händler bestätigen.', foto:'usato-carpigiani-labo4060xpe.jpg', real:true, venditore:'Gennaro Eis GmbH', link:'https://www.gennaro-eis.de/gebrauchtes/eismaschinen/carpigiani/' },
       { id:11, cat:'mantecatori', cond:'buono', titolo:'Kombi-Rührmaschine Coldelite Compacta 3002 RTX (gebraucht)', prezzo:'€ 16.499', citta:'Külsheim', desc:'Profi-Kombimaschine, Kapazität 7,5 kg, Leistung 45 kg/h. Zustand und Verfügbarkeit bitte direkt beim Händler bestätigen.', foto:'usato-coldelite-compacta3002rtx.jpg', real:true, venditore:'Gennaro Eis GmbH', link:'https://www.gennaro-eis.de/gebrauchtes/eismaschinen/' },
       { id:12, cat:'pastorizzatori', cond:'buono', titolo:'Pasteurisierer Frigomat PEB 130 (gebraucht)', prezzo:'€ 12.999', citta:'Külsheim', desc:'Profi-Pasteurisierer, Kapazität 130 Liter. Zustand und Verfügbarkeit bitte direkt beim Händler bestätigen.', foto:'usato-frigomat-peb130.jpg', real:true, venditore:'Gennaro Eis GmbH', link:'https://www.gennaro-eis.de/gebrauchtes/eismaschinen/' },
+      { id:13, cat:'vetrine', cond:'buono', titolo:'Eisvitrine MX Flat', citta:'Erftstadt', desc:'Erhältlich in verschiedenen Größen (12er, 16er, 18er, 20er oder 24er), Breite von 1,23 bis 2,30 m. Referenzfoto des Händlers: Preis und Verfügbarkeit auf Anfrage.', foto:'usato-heica-vetrina-mxflat.png', demo:true },
+      { id:14, cat:'mantecatori', cond:'buono', titolo:'Softeismaschine / Frozen Yogurt Maschine BC Easy 2', citta:'Erftstadt', desc:'Maschine für Softeis und Frozen Yogurt. Referenzfoto des Händlers: Preis und Verfügbarkeit auf Anfrage.', foto:'usato-heica-frozenyogurt-bceasy2.png', demo:true },
+      { id:15, cat:'abbattitori', cond:'buono', titolo:'Schockfroster BF 19/15-CW Crio Chill', citta:'Erftstadt', desc:'Schockfrost- und Schnellkühlfunktion, Kapazität 15–19,5 kg. Referenzfoto des Händlers: Preis und Verfügbarkeit auf Anfrage.', foto:'usato-heica-schockfroster-crio-chill.png', demo:true },
     ],
   },
   en: {
@@ -483,6 +509,9 @@ const I18N = {
     introText: "A marketplace among gelato makers to buy and sell used equipment in good condition: batch freezers, pasteurizers, display cases, gelato counters, blast chillers and chest freezers. Filter by category and condition, or list your own item.",
     demoNote: "⚠️ Listings without a tag are <strong>demo examples</strong> to show how this section will work. Listings tagged <strong>\"Real listing\"</strong> come from our partner Gennaro Eis GmbH and are actually available machines: please confirm price and availability directly with the dealer.",
     liabilityNote: "ℹ️ Price, photos, shipping (costs covered by the buyer, unless otherwise agreed) and every other condition are arranged <strong>directly between seller and buyer</strong>. The portal puts the parties in touch but takes no responsibility for the listings published or for any transactions completed.",
+    videoDemoTitle: "🎬 Demo video",
+    videoDemoText: "A quick overview of some new and used batch freezers on the market, to get an idea before browsing the listings.",
+    videoDemoCaption: "Demo video — the equipment shown comes from third-party dealers, for illustrative purposes only.",
     filterTitle: "🧭 Filter listings",
     labelCerca: "Search", searchPh: "E.g. batch freezer, display case…",
     labelCategoria: "Category", labelStato: "Condition",
@@ -529,6 +558,9 @@ const I18N = {
       { id:10, cat:'mantecatori', cond:'buono', titolo:'Carpigiani Labo 40 60 XPe batch freezer (used)', prezzo:'€ 10,999', citta:'Külsheim (DE)', desc:'Professional batch freezer, 10.5 kg capacity, 60 kg/h output. Please confirm condition and availability directly with the dealer.', foto:'usato-carpigiani-labo4060xpe.jpg', real:true, venditore:'Gennaro Eis GmbH', link:'https://www.gennaro-eis.de/gebrauchtes/eismaschinen/carpigiani/' },
       { id:11, cat:'mantecatori', cond:'buono', titolo:'Coldelite Compacta 3002 RTX combination freezer (used)', prezzo:'€ 16,499', citta:'Külsheim (DE)', desc:'Professional combination machine, 7.5 kg capacity, 45 kg/h output. Please confirm condition and availability directly with the dealer.', foto:'usato-coldelite-compacta3002rtx.jpg', real:true, venditore:'Gennaro Eis GmbH', link:'https://www.gennaro-eis.de/gebrauchtes/eismaschinen/' },
       { id:12, cat:'pastorizzatori', cond:'buono', titolo:'Frigomat PEB 130 pasteurizer (used)', prezzo:'€ 12,999', citta:'Külsheim (DE)', desc:'Professional pasteurizer, 130-litre capacity. Please confirm condition and availability directly with the dealer.', foto:'usato-frigomat-peb130.jpg', real:true, venditore:'Gennaro Eis GmbH', link:'https://www.gennaro-eis.de/gebrauchtes/eismaschinen/' },
+      { id:13, cat:'vetrine', cond:'buono', titolo:'Ice cream display case Eisvitrine MX Flat', citta:'Erftstadt (DE)', desc:'Available in several sizes (12, 16, 18, 20 or 24 tubs), width from 1.23 to 2.30 m. Reference photo from the dealer: price and availability on request.', foto:'usato-heica-vetrina-mxflat.png', demo:true },
+      { id:14, cat:'mantecatori', cond:'buono', titolo:'Soft-serve / frozen yogurt machine BC Easy 2', citta:'Erftstadt (DE)', desc:'Machine for soft-serve ice cream and frozen yogurt. Reference photo from the dealer: price and availability on request.', foto:'usato-heica-frozenyogurt-bceasy2.png', demo:true },
+      { id:15, cat:'abbattitori', cond:'buono', titolo:'Blast chiller BF 19/15-CW Crio Chill', citta:'Erftstadt (DE)', desc:'Blast-freezing and quick-chill function, 15–19.5 kg capacity. Reference photo from the dealer: price and availability on request.', foto:'usato-heica-schockfroster-crio-chill.png', demo:true },
     ],
   },
 };
@@ -590,17 +622,17 @@ function renderListings(){
       <span class="listing-ribbon${item.real ? ' real' : ''}">${escHtml(item.real ? t('realRibbon') : t('esempioRibbon'))}</span>
       <div class="listing-photo">${item.foto ? `<img src="${item.foto}" alt="${escHtml(item.titolo)}" loading="lazy">` : (CATEGORY_ICONS[item.cat] || '🧊')}</div>
       <div class="listing-body">
-        <div class="listing-price">${escHtml(item.prezzo)}</div>
+        ${item.prezzo ? `<div class="listing-price">${escHtml(item.prezzo)}</div>` : ''}
         <div class="listing-title">${escHtml(item.titolo)}</div>
         <div class="listing-meta">
           <span class="cond-tag ${CONDITION_CLASS[item.cond]}">${escHtml(condLabels[item.cond])}</span>
-          <span>📍 ${escHtml(item.citta)}</span>
+          ${item.citta ? `<span>📍 ${escHtml(item.citta)}</span>` : ''}
         </div>
         <div class="listing-desc">${escHtml(item.desc)}</div>
         ${item.real ? `<div class="listing-seller">🏬 ${escHtml(item.venditore)}</div>` : ''}
         ${item.real
           ? `<a class="btn small" href="${item.link}" target="_blank" rel="noopener">${escHtml(t('vediVenditore')(item.venditore))}</a>`
-          : `<a class="btn small" href="mailto:marcolestan@gelateriaingredienti.com?subject=${encodeURIComponent(item.titolo)}">${escHtml(t('contattaVenditore'))}</a>`}
+          : (item.demo ? '' : `<a class="btn small" href="mailto:marcolestan@gelateriaingredienti.com?subject=${encodeURIComponent(item.titolo)}">${escHtml(t('contattaVenditore'))}</a>`)}
       </div>
     </div>
   `).join('');
