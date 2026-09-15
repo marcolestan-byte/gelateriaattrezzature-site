@@ -123,6 +123,7 @@
   .listing-card:hover{ transform: translateY(-3px); box-shadow: var(--shadow-lg); }
   .listing-photo{ height:210px; display:flex; align-items:center; justify-content:center; font-size:2.6rem; background: linear-gradient(135deg, var(--cream-2) 0%, var(--cream) 100%); border-bottom:1px solid var(--line); overflow:hidden; padding:8px; }
   .listing-photo img{ width:100%; height:100%; object-fit:contain; display:block; }
+  .listing-card--noimg .listing-body{ padding-top:32px; }
   .listing-ribbon{ position:absolute; top:10px; left:-28px; transform:rotate(-40deg); background:var(--amarena); color:white; font-size:0.62rem; font-weight:800; letter-spacing:0.04em; text-transform:uppercase; padding:3px 34px; box-shadow:0 2px 6px rgba(0,0,0,0.2); }
   .listing-ribbon.real{ background:var(--pistachio-dark); }
   .listing-seller{ font-size:0.72rem; color:var(--pistachio-dark); font-weight:700; }
@@ -618,9 +619,9 @@ function renderListings(){
   countEl.textContent = t('listingCountText')(items.length);
 
   grid.innerHTML = items.map(item => `
-    <div class="listing-card">
+    <div class="listing-card${item.foto ? '' : ' listing-card--noimg'}">
       <span class="listing-ribbon${item.real ? ' real' : ''}">${escHtml(item.real ? t('realRibbon') : t('esempioRibbon'))}</span>
-      <div class="listing-photo">${item.foto ? `<img src="${item.foto}" alt="${escHtml(item.titolo)}" loading="lazy">` : (CATEGORY_ICONS[item.cat] || '🧊')}</div>
+      ${item.foto ? `<div class="listing-photo"><img src="${item.foto}" alt="${escHtml(item.titolo)}" loading="lazy"></div>` : ''}
       <div class="listing-body">
         ${item.prezzo ? `<div class="listing-price">${escHtml(item.prezzo)}</div>` : ''}
         <div class="listing-title">${escHtml(item.titolo)}</div>
