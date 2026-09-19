@@ -656,7 +656,7 @@ function renderListings(){
           ? `<a class="btn small" href="${item.link}" target="_blank" rel="noopener">${escHtml(t('vediVenditore')(item.venditore))}</a>`
           : (item.demo ? '' : `<a class="btn small" href="mailto:marcolestan@gelateriaingredienti.com?subject=${encodeURIComponent(item.titolo)}">${escHtml(t('contattaVenditore'))}</a>`)}
       </div>
-      ${item.demo ? `
+      ${!item.real ? `
       <a class="cta-overlay listing-card--wanted" href="mailto:marcolestan@gelateriaingredienti.com?subject=${encodeURIComponent(t('ctaSubject'))}" aria-label="${escHtml(t('ctaLine1'))} ${escHtml(t('ctaLine2'))}">
         <span class="cta-overlay-inner">
           <span class="cta-spark s1">✦</span><span class="cta-spark s2">✦</span><span class="cta-spark s3">✦</span>
