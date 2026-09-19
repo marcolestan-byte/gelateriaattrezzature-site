@@ -327,8 +327,8 @@
           <input type="email" id="sellEmail" name="email" required />
         </div>
         <div class="field">
-          <label for="sellTelefono" data-i18n="sellLabelTelefono">Telefono (facoltativo)</label>
-          <input type="tel" id="sellTelefono" name="telefono" />
+          <label for="sellTelefono" data-i18n="sellLabelTelefono">Telefono / WhatsApp (facoltativo)</label>
+          <input type="tel" id="sellTelefono" name="telefono" data-i18n-ph="sellTelefonoPh" placeholder="Es. +39 333 1234567" />
         </div>
         <div class="field">
           <label for="sellCategoria" data-i18n="sellLabelCategoria">Categoria</label>
@@ -355,10 +355,14 @@
           <textarea id="sellDescrizione" name="descrizione" rows="3" data-i18n-ph="sellDescrizionePh" placeholder="Anno, condizioni, motivo della vendita…"></textarea>
         </div>
         <div class="field full">
-          <label for="sellFoto" data-i18n="sellLabelFoto">📷 Foto (facoltativo)</label>
-          <input type="file" id="sellFoto" name="foto" accept="image/*" multiple />
-          <p class="field-hint" data-i18n="sellFotoHint">Puoi allegare fino a 3 foto (JPG o PNG).</p>
+          <label for="sellFoto" data-i18n="sellLabelFoto">📷 Scatta una foto ora (o carica dalla galleria)</label>
+          <input type="file" id="sellFoto" name="foto" accept="image/*" capture="environment" multiple />
+          <p class="field-hint" data-i18n="sellFotoHint">Tocca per aprire la fotocamera e scattare subito, oppure scegli fino a 3 foto già salvate (JPG o PNG).</p>
         </div>
+      </div>
+      <div class="field" style="display:flex; align-items:flex-start; gap:8px;">
+        <input type="checkbox" id="sellWhatsapp" name="whatsapp_disponibile" style="width:auto; margin-top:3px;" />
+        <label for="sellWhatsapp" style="text-transform:none; font-weight:400; font-size:0.8rem; margin:0;" data-i18n="sellWhatsappLabel">💬 Raggiungibile anche su WhatsApp a questo numero</label>
       </div>
       <div class="field" style="display:flex; align-items:flex-start; gap:8px;">
         <input type="checkbox" id="sellSpedizione" name="spedizione_disponibile" style="width:auto; margin-top:3px;" />
@@ -414,13 +418,14 @@ const I18N = {
     ctaSubject: "Ho un'attrezzatura usata da vendere",
     sellTitle: "➕ Pubblica un annuncio",
     sellSubtitle: "Vendi un'attrezzatura usata? Compila il modulo: ti ricontattiamo per pubblicare l'annuncio.",
-    sellLabelNome: "Nome / Gelateria *", sellLabelEmail: "Email *", sellLabelTelefono: "Telefono (facoltativo)",
+    sellLabelNome: "Nome / Gelateria *", sellLabelEmail: "Email *", sellLabelTelefono: "Telefono / WhatsApp (facoltativo)",
+    sellTelefonoPh: "Es. +39 333 1234567", sellWhatsappLabel: "💬 Raggiungibile anche su WhatsApp a questo numero",
     sellLabelCategoria: "Categoria", sellLabelCitta: "Città", sellLabelTitolo: "Titolo annuncio *",
     sellTitoloPh: "Es. Mantecatore Carpigiani LB 502",
     sellLabelPrezzo: "Prezzo richiesto", sellPrezzoPh: "Es. € 3.200",
     sellLabelStato: "Stato", sellLabelDescrizione: "Descrizione",
     sellDescrizionePh: "Anno, condizioni, motivo della vendita…",
-    sellLabelFoto: "📷 Foto (facoltativo)", sellFotoHint: "Puoi allegare fino a 3 foto (JPG o PNG).",
+    sellLabelFoto: "📷 Scatta una foto ora (o carica dalla galleria)", sellFotoHint: "Tocca per aprire la fotocamera e scattare subito, oppure scegli fino a 3 foto già salvate (JPG o PNG).",
     sellSpedizioneLabel: "🚚 Disponibile per la spedizione (spese a carico dell'acquirente)",
     sellPrivacyLabel: "Ho letto e accetto l'informativa privacy (obbligatorio) *",
     sellResponsabilitaLabel: "Accetto che prezzo, foto, spedizione, pagamento e consegna vengano concordati direttamente tra venditore e acquirente: il portale non si assume alcuna responsabilità per gli annunci pubblicati né per le transazioni concluse (obbligatorio) *",
@@ -481,13 +486,14 @@ const I18N = {
     ctaSubject: "Ich habe eine gebrauchte Ausrüstung zu verkaufen",
     sellTitle: "➕ Anzeige veröffentlichen",
     sellSubtitle: "Verkaufen Sie gebrauchte Ausrüstung? Füllen Sie das Formular aus: Wir melden uns, um die Anzeige zu veröffentlichen.",
-    sellLabelNome: "Name / Eisdiele *", sellLabelEmail: "E-Mail *", sellLabelTelefono: "Telefon (optional)",
+    sellLabelNome: "Name / Eisdiele *", sellLabelEmail: "E-Mail *", sellLabelTelefono: "Telefon / WhatsApp (optional)",
+    sellTelefonoPh: "z. B. +49 151 12345678", sellWhatsappLabel: "💬 Auch über WhatsApp unter dieser Nummer erreichbar",
     sellLabelCategoria: "Kategorie", sellLabelCitta: "Stadt", sellLabelTitolo: "Anzeigentitel *",
     sellTitoloPh: "Z. B. Rührmaschine Carpigiani LB 502",
     sellLabelPrezzo: "Gewünschter Preis", sellPrezzoPh: "Z. B. € 3.200",
     sellLabelStato: "Zustand", sellLabelDescrizione: "Beschreibung",
     sellDescrizionePh: "Baujahr, Zustand, Verkaufsgrund…",
-    sellLabelFoto: "📷 Fotos (optional)", sellFotoHint: "Sie können bis zu 3 Fotos anhängen (JPG oder PNG).",
+    sellLabelFoto: "📷 Jetzt ein Foto machen (oder aus der Galerie hochladen)", sellFotoHint: "Tippen, um die Kamera zu öffnen und sofort zu fotografieren, oder bis zu 3 gespeicherte Fotos auswählen (JPG oder PNG).",
     sellSpedizioneLabel: "🚚 Versand möglich (Versandkosten trägt der Käufer)",
     sellPrivacyLabel: "Ich habe die Datenschutzerklärung gelesen und akzeptiere sie (Pflichtfeld) *",
     sellResponsabilitaLabel: "Ich akzeptiere, dass Preis, Fotos, Versand, Zahlung und Lieferung direkt zwischen Verkäufer und Käufer vereinbart werden: Das Portal übernimmt keinerlei Haftung für veröffentlichte Anzeigen oder abgeschlossene Geschäfte (Pflichtfeld) *",
@@ -548,13 +554,14 @@ const I18N = {
     ctaSubject: "I have used equipment to sell",
     sellTitle: "➕ List an item",
     sellSubtitle: "Selling used equipment? Fill in the form: we'll get back to you to publish the listing.",
-    sellLabelNome: "Name / Gelato shop *", sellLabelEmail: "Email *", sellLabelTelefono: "Phone (optional)",
+    sellLabelNome: "Name / Gelato shop *", sellLabelEmail: "Email *", sellLabelTelefono: "Phone / WhatsApp (optional)",
+    sellTelefonoPh: "e.g. +1 555 1234567", sellWhatsappLabel: "💬 Also reachable on WhatsApp at this number",
     sellLabelCategoria: "Category", sellLabelCitta: "City", sellLabelTitolo: "Listing title *",
     sellTitoloPh: "E.g. Carpigiani LB 502 batch freezer",
     sellLabelPrezzo: "Asking price", sellPrezzoPh: "E.g. € 3,200",
     sellLabelStato: "Condition", sellLabelDescrizione: "Description",
     sellDescrizionePh: "Year, condition, reason for selling…",
-    sellLabelFoto: "📷 Photos (optional)", sellFotoHint: "You can attach up to 3 photos (JPG or PNG).",
+    sellLabelFoto: "📷 Take a photo now (or upload from gallery)", sellFotoHint: "Tap to open the camera and shoot right away, or pick up to 3 saved photos (JPG or PNG).",
     sellSpedizioneLabel: "🚚 Shipping available (buyer covers the cost)",
     sellPrivacyLabel: "I have read and accept the privacy notice (required) *",
     sellResponsabilitaLabel: "I accept that price, photos, shipping, payment and delivery are arranged directly between seller and buyer: the portal takes no responsibility for the listings published or for any transactions completed (required) *",
