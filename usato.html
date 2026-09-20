@@ -384,7 +384,7 @@
 <div class="toast" id="toast"></div>
 
 <script>
-const CATEGORY_ICONS = { mantecatori:'🥄', pastorizzatori:'🌡️', abbattitori:'❄️', vetrine:'🪟', banchi:'🧊', congelatori:'🧊' };
+const CATEGORY_ICONS = { mantecatori:'🥄', pastorizzatori:'🌡️', abbattitori:'❄️', vetrine:'🪟', banchi:'🧊', congelatori:'🧊', altro:'🔧' };
 const CONDITION_CLASS = { nuovo:'cond-nuovo', ottimo:'cond-ottimo', buono:'cond-buono', revisionare:'cond-revisionare' };
 
 const I18N = {
@@ -407,7 +407,7 @@ const I18N = {
     labelCategoria: "Categoria", labelStato: "Stato",
     btnPubblica: "➕ Pubblica un annuncio",
     optTutte: "Tutte le categorie", optTutti: "Tutti gli stati",
-    catLabels: { mantecatori:"Mantecatori", pastorizzatori:"Pastorizzatori", abbattitori:"Abbattitori", vetrine:"Vetrine espositive", banchi:"Banchi gelato", congelatori:"Congelatori" },
+    catLabels: { mantecatori:"Mantecatori", pastorizzatori:"Pastorizzatori", abbattitori:"Abbattitori", vetrine:"Vetrine espositive", banchi:"Banchi gelato", congelatori:"Congelatori", altro:"Altro" },
     condLabels: { nuovo:"Come nuovo", ottimo:"Ottimo stato", buono:"Buono stato", revisionare:"Da revisionare" },
     contattaVenditore: "✉️ Contatta il venditore",
     listingCountText: (n) => n === 1 ? "1 annuncio trovato" : `${n} annunci trovati`,
@@ -454,6 +454,10 @@ const I18N = {
       { id:13, cat:'vetrine', cond:'buono', titolo:'Vetrina gelato Eisvitrine MX Flat', citta:'Erftstadt (Germania)', desc:'Disponibile in diverse misure (12, 16, 18, 20 o 24 pozzetti), larghezza da 1,23 a 2,30 m. Foto di riferimento del rivenditore: prezzo e disponibilità da richiedere.', foto:'usato-heica-vetrina-mxflat.png', demo:true },
       { id:14, cat:'mantecatori', cond:'buono', titolo:'Macchina soft / frozen yogurt BC Easy 2', citta:'Erftstadt (Germania)', desc:'Macchina per gelato soft e frozen yogurt. Foto di riferimento del rivenditore: prezzo e disponibilità da richiedere.', foto:'usato-heica-frozenyogurt-bceasy2.png', demo:true },
       { id:15, cat:'abbattitori', cond:'buono', titolo:'Schockfroster BF 19/15-CW Crio Chill', citta:'Erftstadt (Germania)', desc:'Abbattitore con funzione di shock frost e rapido raffreddamento, capacità 15–19,5 kg. Foto di riferimento del rivenditore: prezzo e disponibilità da richiedere.', foto:'usato-heica-schockfroster-crio-chill.png', demo:true },
+      { id:16, cat:'altro', cond:'buono', titolo:'Frigorifero banco in acciaio inox a 2 ante', desc:'Frigorifero professionale a banco, doppia anta in acciaio inox, display digitale con controllo temperatura. Buone condizioni generali, funzionante. Prezzo su richiesta.', foto:'usato-frigorifero-banco-inox.jpg', mine:true },
+      { id:17, cat:'altro', cond:'buono', titolo:'Macchina da caffè professionale 3 gruppi', desc:'Macchina da caffè espresso a 3 gruppi con leve manuali, gruppo vapore/acqua calda incluso. Buone condizioni, prezzo su richiesta.', foto:'usato-macchina-caffe-3gruppi.jpg', mine:true },
+      { id:18, cat:'altro', cond:'buono', titolo:'Macchina da caffè professionale 2 gruppi con display digitale', desc:'Macchina da caffè espresso a 2 gruppi con pulsantiera digitale e programmazione dosi, gruppo vapore e acqua calda. Buone condizioni, prezzo su richiesta.', foto:'usato-macchina-caffe-2gruppi.jpg', mine:true },
+      { id:19, cat:'altro', cond:'ottimo', titolo:'Vetrina refrigerata per torte e pasticceria (Saro)', desc:'Vetrina espositiva refrigerata a bombatura curva per torte e prodotti di pasticceria, marca Saro. Ancora imballata con pellicola protettiva, ottime condizioni. Prezzo su richiesta.', foto:'usato-vetrina-torte-saro.jpg', mine:true },
     ],
   },
   de: {
@@ -475,7 +479,7 @@ const I18N = {
     labelCategoria: "Kategorie", labelStato: "Zustand",
     btnPubblica: "➕ Anzeige veröffentlichen",
     optTutte: "Alle Kategorien", optTutti: "Alle Zustände",
-    catLabels: { mantecatori:"Rührmaschinen", pastorizzatori:"Pasteurisierer", abbattitori:"Schockfroster", vetrine:"Vitrinen", banchi:"Eistheken", congelatori:"Tiefkühltruhen" },
+    catLabels: { mantecatori:"Rührmaschinen", pastorizzatori:"Pasteurisierer", abbattitori:"Schockfroster", vetrine:"Vitrinen", banchi:"Eistheken", congelatori:"Tiefkühltruhen", altro:"Sonstiges" },
     condLabels: { nuovo:"Wie neu", ottimo:"Sehr guter Zustand", buono:"Guter Zustand", revisionare:"Wartung empfohlen" },
     contattaVenditore: "✉️ Verkäufer kontaktieren",
     listingCountText: (n) => n === 1 ? "1 Anzeige gefunden" : `${n} Anzeigen gefunden`,
@@ -522,6 +526,10 @@ const I18N = {
       { id:13, cat:'vetrine', cond:'buono', titolo:'Eisvitrine MX Flat', citta:'Erftstadt', desc:'Erhältlich in verschiedenen Größen (12er, 16er, 18er, 20er oder 24er), Breite von 1,23 bis 2,30 m. Referenzfoto des Händlers: Preis und Verfügbarkeit auf Anfrage.', foto:'usato-heica-vetrina-mxflat.png', demo:true },
       { id:14, cat:'mantecatori', cond:'buono', titolo:'Softeismaschine / Frozen Yogurt Maschine BC Easy 2', citta:'Erftstadt', desc:'Maschine für Softeis und Frozen Yogurt. Referenzfoto des Händlers: Preis und Verfügbarkeit auf Anfrage.', foto:'usato-heica-frozenyogurt-bceasy2.png', demo:true },
       { id:15, cat:'abbattitori', cond:'buono', titolo:'Schockfroster BF 19/15-CW Crio Chill', citta:'Erftstadt', desc:'Schockfrost- und Schnellkühlfunktion, Kapazität 15–19,5 kg. Referenzfoto des Händlers: Preis und Verfügbarkeit auf Anfrage.', foto:'usato-heica-schockfroster-crio-chill.png', demo:true },
+      { id:16, cat:'altro', cond:'buono', titolo:'Kühlschrank-Unterbau aus Edelstahl, 2 Türen', desc:'Profi-Kühlschrank als Unterbau, zwei Edelstahltüren, digitales Temperaturdisplay. Guter Allgemeinzustand, funktionstüchtig. Preis auf Anfrage.', foto:'usato-frigorifero-banco-inox.jpg', mine:true },
+      { id:17, cat:'altro', cond:'buono', titolo:'Profi-Espressomaschine, 3 Gruppen', desc:'Espressomaschine mit 3 Brühgruppen und manuellen Hebeln, inkl. Dampf-/Heißwasserlanze. Guter Zustand, Preis auf Anfrage.', foto:'usato-macchina-caffe-3gruppi.jpg', mine:true },
+      { id:18, cat:'altro', cond:'buono', titolo:'Profi-Espressomaschine, 2 Gruppen mit Digitaldisplay', desc:'Espressomaschine mit 2 Brühgruppen, digitaler Tastatur und Dosierprogrammierung, inkl. Dampf- und Heißwasserlanze. Guter Zustand, Preis auf Anfrage.', foto:'usato-macchina-caffe-2gruppi.jpg', mine:true },
+      { id:19, cat:'altro', cond:'ottimo', titolo:'Gekühlte Kuchenvitrine (Saro)', desc:'Gebogene Kühlvitrine für Torten und Feingebäck, Marke Saro. Noch mit Schutzfolie verpackt, sehr guter Zustand. Preis auf Anfrage.', foto:'usato-vetrina-torte-saro.jpg', mine:true },
     ],
   },
   en: {
@@ -543,7 +551,7 @@ const I18N = {
     labelCategoria: "Category", labelStato: "Condition",
     btnPubblica: "➕ List an item",
     optTutte: "All categories", optTutti: "All conditions",
-    catLabels: { mantecatori:"Batch freezers", pastorizzatori:"Pasteurizers", abbattitori:"Blast chillers", vetrine:"Display cases", banchi:"Gelato counters", congelatori:"Chest freezers" },
+    catLabels: { mantecatori:"Batch freezers", pastorizzatori:"Pasteurizers", abbattitori:"Blast chillers", vetrine:"Display cases", banchi:"Gelato counters", congelatori:"Chest freezers", altro:"Other" },
     condLabels: { nuovo:"Like new", ottimo:"Excellent condition", buono:"Good condition", revisionare:"Needs servicing" },
     contattaVenditore: "✉️ Contact the seller",
     listingCountText: (n) => n === 1 ? "1 listing found" : `${n} listings found`,
@@ -590,6 +598,10 @@ const I18N = {
       { id:13, cat:'vetrine', cond:'buono', titolo:'Ice cream display case Eisvitrine MX Flat', citta:'Erftstadt (DE)', desc:'Available in several sizes (12, 16, 18, 20 or 24 tubs), width from 1.23 to 2.30 m. Reference photo from the dealer: price and availability on request.', foto:'usato-heica-vetrina-mxflat.png', demo:true },
       { id:14, cat:'mantecatori', cond:'buono', titolo:'Soft-serve / frozen yogurt machine BC Easy 2', citta:'Erftstadt (DE)', desc:'Machine for soft-serve ice cream and frozen yogurt. Reference photo from the dealer: price and availability on request.', foto:'usato-heica-frozenyogurt-bceasy2.png', demo:true },
       { id:15, cat:'abbattitori', cond:'buono', titolo:'Blast chiller BF 19/15-CW Crio Chill', citta:'Erftstadt (DE)', desc:'Blast-freezing and quick-chill function, 15–19.5 kg capacity. Reference photo from the dealer: price and availability on request.', foto:'usato-heica-schockfroster-crio-chill.png', demo:true },
+      { id:16, cat:'altro', cond:'buono', titolo:'Stainless steel undercounter fridge, 2 doors', desc:'Professional undercounter fridge, two stainless steel doors, digital temperature display. Good overall condition, working. Price on request.', foto:'usato-frigorifero-banco-inox.jpg', mine:true },
+      { id:17, cat:'altro', cond:'buono', titolo:'Professional espresso machine, 3 groups', desc:'3-group espresso machine with manual levers, including steam/hot water wand. Good condition, price on request.', foto:'usato-macchina-caffe-3gruppi.jpg', mine:true },
+      { id:18, cat:'altro', cond:'buono', titolo:'Professional espresso machine, 2 groups with digital display', desc:'2-group espresso machine with digital keypad and programmable doses, including steam and hot water wand. Good condition, price on request.', foto:'usato-macchina-caffe-2gruppi.jpg', mine:true },
+      { id:19, cat:'altro', cond:'ottimo', titolo:'Refrigerated cake display case (Saro)', desc:'Curved refrigerated display case for cakes and pastries, Saro brand. Still wrapped in protective film, excellent condition. Price on request.', foto:'usato-vetrina-torte-saro.jpg', mine:true },
     ],
   },
 };
@@ -648,7 +660,7 @@ function renderListings(){
 
   grid.innerHTML = items.map(item => `
     <div class="listing-card${item.foto ? '' : ' listing-card--noimg'}">
-      <span class="listing-ribbon${item.real ? ' real' : ''}">${escHtml(item.real ? t('realRibbon') : t('esempioRibbon'))}</span>
+      <span class="listing-ribbon${(item.real || item.mine) ? ' real' : ''}">${escHtml((item.real || item.mine) ? t('realRibbon') : t('esempioRibbon'))}</span>
       ${item.foto ? `<div class="listing-photo"><img src="${item.foto}" alt="${escHtml(item.titolo)}" loading="lazy"></div>` : ''}
       <div class="listing-body">
         ${item.prezzo ? `<div class="listing-price">${escHtml(item.prezzo)}</div>` : ''}
@@ -663,7 +675,7 @@ function renderListings(){
           ? `<a class="btn small" href="${item.link}" target="_blank" rel="noopener">${escHtml(t('vediVenditore')(item.venditore))}</a>`
           : (item.demo ? '' : `<a class="btn small" href="mailto:marcolestan@gelateriaingredienti.com?subject=${encodeURIComponent(item.titolo)}">${escHtml(t('contattaVenditore'))}</a>`)}
       </div>
-      ${!item.real ? `
+      ${(!item.real && !item.mine) ? `
       <a class="cta-overlay listing-card--wanted" href="mailto:marcolestan@gelateriaingredienti.com?subject=${encodeURIComponent(t('ctaSubject'))}" aria-label="${escHtml(t('ctaLine1'))} ${escHtml(t('ctaLine2'))}">
         <span class="cta-overlay-inner">
           <span class="cta-spark s1">✦</span><span class="cta-spark s2">✦</span><span class="cta-spark s3">✦</span>
