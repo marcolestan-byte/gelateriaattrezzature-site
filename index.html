@@ -799,7 +799,7 @@ const I18N = {
     colCategoria: "Categoria",
     colValutazione: "Valutazione",
     colDettagli: "Dettagli",
-    doppioClicSito: "Doppio clic per aprire il sito ufficiale dell'azienda",
+    doppioClicSito: "Apri il sito ufficiale dell'azienda",
     btnJoinUs: "🤝 Unisciti a noi",
     joinTitle: "🤝 Unisciti a noi",
     joinSubtitle: "Sei un'azienda produttrice o un grossista? Inserisci i tuoi prodotti nel portale — è gratuito e richiede due minuti.",
@@ -1059,7 +1059,7 @@ const I18N = {
     colCategoria: "Kategorie",
     colValutazione: "Bewertung",
     colDettagli: "Details",
-    doppioClicSito: "Doppelklick öffnet die offizielle Website des Unternehmens",
+    doppioClicSito: "Öffnet die offizielle Website des Unternehmens",
     btnJoinUs: "🤝 Werden Sie Partner",
     joinTitle: "🤝 Werden Sie Partner",
     joinSubtitle: "Sind Sie ein Herstellerunternehmen oder Großhändler? Tragen Sie Ihre Produkte kostenlos in das Portal ein — es dauert nur zwei Minuten.",
@@ -1319,7 +1319,7 @@ const I18N = {
     colCategoria: "Category",
     colValutazione: "Rating",
     colDettagli: "Details",
-    doppioClicSito: "Double-click to open the company's official website",
+    doppioClicSito: "Open the company's official website",
     btnJoinUs: "🤝 Join us",
     joinTitle: "🤝 Join us",
     joinSubtitle: "Are you a manufacturer or a wholesaler? Add your products to the portal — it's free and takes two minutes.",
@@ -1526,7 +1526,7 @@ function aziendaCellHtml(azienda){
   const c = companyFor(azienda);
   const url = c && c.sito;
   if(url){
-    return `<span class="azienda-link" title="${t('doppioClicSito')}" ondblclick="window.open('${url}','_blank','noopener')">${azienda}</span>`;
+    return `<a class="azienda-link" href="${escAttr(url)}" target="_blank" rel="noopener" title="${t('doppioClicSito')}">${azienda}</a>`;
   }
   return azienda;
 }
