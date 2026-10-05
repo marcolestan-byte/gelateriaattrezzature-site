@@ -101,7 +101,7 @@
   header.top h1{ margin:34px 0 8px; font-size: clamp(1.45rem, 4vw, 1.85rem); font-weight: 800; letter-spacing: -0.02em; }
   header.top p{ margin:0; font-size: 0.94rem; opacity: 0.95; max-width: 620px; margin-left:auto; margin-right:auto; line-height:1.55; }
   .quick-nav{
-    display:flex; gap:8px; overflow-x:auto; -webkit-overflow-scrolling:touch;
+    display:flex; flex-direction:column; gap:8px;
     background: rgba(40,92,133,0.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
     padding: 10px 14px; position: sticky; top:0; z-index: 50;
     box-shadow: 0 6px 18px rgba(20,35,50,0.2); scrollbar-width: thin;
@@ -119,6 +119,8 @@
   .quick-nav a.nav-usato{ background: rgba(60,145,90,0.55); border-color: rgba(60,145,90,0.9); }
   .quick-nav a.nav-usato-aziende{ background: rgba(190,120,40,0.55); border-color: rgba(190,120,40,0.9); }
   .quick-nav a.nav-arredamento{ background: rgba(90,90,150,0.55); border-color: rgba(90,90,150,0.9); }
+  .quick-nav .nav-row{ display:flex; gap:8px; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:thin; }
+  .quick-nav a.nav-accessori{ background: rgba(200,110,60,0.55); border-color: rgba(200,110,60,0.9); }
   .quick-nav a.nav-vetrine{ background: rgba(35,130,150,0.55); border-color: rgba(35,130,150,0.9); }
   .quick-nav a.nav-abbattitori{ background: rgba(60,110,190,0.55); border-color: rgba(60,110,190,0.9); }
   .quick-nav a.nav-video{ background: rgba(180,60,140,0.55); border-color: rgba(180,60,140,0.9); }
@@ -180,17 +182,21 @@
 </header>
 
 <nav class="quick-nav" id="quickNav" aria-label="Navigazione rapida">
-  <a href="index.html#confrontaSection" class="nav-confronta" data-i18n="navConfronta">⚖️ Confronta</a>
-  <a href="index.html#archiveSection" class="nav-archivio" data-i18n="navArchivio">📚 Archivio</a>
-  <a href="chi-sono.html" class="active nav-chisono" data-i18n="navChiSiamo">👤 Chi sono</a>
-  <a href="aziende.html" class="nav-aziende" data-i18n="navAziende">🏢 Aziende</a>
-  <a href="notizie.html" class="nav-notizie" data-i18n="navNotizie">📰 Notizie</a>
-  <a href="usato.html" class="nav-usato" data-i18n="navUsato">♻️ Usato</a>
-  <a href="aziende-usato.html" class="nav-usato-aziende" data-i18n="navUsatoAziende">🏬 Rivenditori Usato</a>
-  <a href="arredamento-gelateria.html" class="nav-arredamento" data-i18n="navArredamento">🪑 Arredamento</a>
-  <a href="vetrine-gelato.html" class="nav-vetrine">🧊 Vetrine</a>
-  <a href="abbattitori-gelato.html" class="nav-abbattitori">❄️ Abbattitori</a>
-  <a href="video-demo.html" class="nav-video">🎬 Video</a>
+  <div class="nav-row">
+    <a href="index.html#archiveSection" class="nav-archivio" data-i18n="navArchivio">📚 Archivio</a>
+    <a href="chi-sono.html" class="active nav-chisono" data-i18n="navChiSiamo">👤 Chi sono</a>
+    <a href="aziende.html" class="nav-aziende" data-i18n="navAziende">🏢 Aziende</a>
+    <a href="notizie.html" class="nav-notizie" data-i18n="navNotizie">📰 Notizie</a>
+    <a href="usato.html" class="nav-usato" data-i18n="navUsato">♻️ Usato</a>
+    <a href="aziende-usato.html" class="nav-usato-aziende" data-i18n="navUsatoAziende">🏬 Rivenditori Usato</a>
+    <a href="vetrine-gelato.html" class="nav-vetrine">🧊 Vetrine</a>
+    <a href="abbattitori-gelato.html" class="nav-abbattitori">❄️ Abbattitori</a>
+    <a href="video-demo.html" class="nav-video">🎬 Video</a>
+  </div>
+  <div class="nav-row">
+    <a href="arredamento-gelateria.html" class="nav-arredamento" data-i18n="navArredamento">🪑 Arredamento</a>
+    <a href="accessori-gelateria.html" class="nav-accessori" data-i18n="navAccessori">🧰 Accessori</a>
+  </div>
 </nav>
 <p class="construction-note" data-i18n="constructionNote">🚧 Sito in costruzione</p>
 
@@ -242,6 +248,7 @@ const I18N = {
     navUsato: "♻️ Usato",
     navUsatoAziende: "🏬 Rivenditori Usato",
     navArredamento: "🪑 Arredamento",
+    navAccessori: "🧰 Accessori",
     chiSiamoTitle: "👤 Chi sono",
     chiSiamoText: "Mi chiamo Marco e la mia storia nel gelato artigianale inizia nel 1995, in laboratorio. Ho imparato il mestiere sul campo, seguendo la produzione in diverse gelaterie — anche tra le più importanti — e negli anni ho lavorato quotidianamente con mantecatori, pastorizzatori, abbattitori, frigoriferi e mixer di marche diverse: ho imparato pregi e difetti di ciascuno non dalle brochure, ma dall'uso reale in laboratorio, giorno dopo giorno.",
     chiSiamoText2: 'Tre anni fa una disfunzione del sistema nervoso mi ha portato in carrozzina, e da allora non riesco più a lavorare in laboratorio a pieno regime. Ho deciso però di non lasciare che quell\'esperienza andasse persa. Dopo aver creato <a href="https://gelateriaingredienti.com" style="color:var(--pistachio-dark); font-weight:700;">gelateriaingredienti.com</a> per confrontare basi e paste, è nato naturalmente anche <strong>gelateriaattrezzature.com</strong>: stesso obiettivo, questa volta dedicato a mantecatori, pastorizzatori, mixer, frigoriferi e abbattitori — un confronto reale tra i prodotti disponibili, con caratteristiche tecniche e prezzi indicativi messi a confronto fianco a fianco.',
@@ -266,6 +273,7 @@ const I18N = {
     navUsato: "♻️ Gebraucht",
     navUsatoAziende: "🏬 Gebraucht-Händler",
     navArredamento: "🪑 Einrichtung",
+    navAccessori: "🧰 Zubehör",
     chiSiamoTitle: "👤 Über mich",
     chiSiamoText: "Ich heiße Marco, und meine Geschichte im handwerklichen Eis beginnt 1995, im Labor. Ich habe das Handwerk direkt vor Ort gelernt, indem ich die Produktion in verschiedenen Eisdielen begleitet habe — auch bei einigen der bekanntesten — und im Laufe der Jahre habe ich täglich mit Rührmaschinen, Pasteurisierern, Schockfrostern, Kühlschränken und Mixern verschiedener Marken gearbeitet: Ich habe die Vor- und Nachteile jedes einzelnen nicht aus Broschüren gelernt, sondern aus dem echten Einsatz im Labor, Tag für Tag.",
     chiSiamoText2: 'Vor drei Jahren hat mich eine Erkrankung des Nervensystems in den Rollstuhl gebracht, und seitdem kann ich nicht mehr mit voller Kraft im Labor arbeiten. Ich habe aber beschlossen, diese Erfahrung nicht verloren gehen zu lassen. Nach der Gründung von <a href="https://gelateriaingredienti.com" style="color:var(--pistachio-dark); font-weight:700;">gelateriaingredienti.com</a> zum Vergleich von Basen und Pasten entstand ganz natürlich auch <strong>gelateriaattrezzature.com</strong>: gleiches Ziel, diesmal für Rührmaschinen, Pasteurisierer, Mixer, Kühlschränke und Schockfroster — ein echter Vergleich der auf dem Markt erhältlichen Produkte, mit technischen Eigenschaften und Richtpreisen Seite an Seite.',
@@ -290,6 +298,7 @@ const I18N = {
     navUsato: "♻️ Used",
     navUsatoAziende: "🏬 Used Dealers",
     navArredamento: "🪑 Furnishings",
+    navAccessori: "🧰 Accessories",
     chiSiamoTitle: "👤 About me",
     chiSiamoText: "My name is Marco, and my story in artisan gelato began in 1995, in the lab. I learned the trade hands-on, following production at various gelaterias — including some of the best-known — and over the years I worked daily with batch freezers, pasteurizers, blast chillers, refrigerators and mixers from different brands: I learned each one's strengths and weaknesses not from brochures, but from real daily use in the lab.",
     chiSiamoText2: 'Three years ago a nervous system disorder left me using a wheelchair, and since then I haven\'t been able to work in the lab at full capacity. I decided not to let that experience go to waste. After creating <a href="https://gelateriaingredienti.com" style="color:var(--pistachio-dark); font-weight:700;">gelateriaingredienti.com</a> to compare bases and pastes, <strong>gelateriaattrezzature.com</strong> came naturally too: same goal, this time for batch freezers, pasteurizers, mixers, refrigerators and blast chillers — a genuine comparison of the products available on the market, with technical specs and indicative prices side by side.',

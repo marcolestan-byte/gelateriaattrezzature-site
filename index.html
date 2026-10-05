@@ -33,10 +33,10 @@
   }
 </script>
 <title>Confronto Attrezzature Gelateria</title>
-<meta name="description" content="Strumento per confrontare mantecatori, pastorizzatori, mixer, frigoriferi e abbattitori per gelateria: aziende, caratteristiche tecniche e prezzi indicativi a confronto">
+<meta name="description" content="Archivio di mantecatori, pastorizzatori, mixer, frigoriferi e abbattitori per gelateria: aziende, caratteristiche tecniche e prezzi indicativi">
 <link rel="canonical" href="https://gelateriaattrezzature.com/">
 <meta property="og:title" content="Confronto Attrezzature Gelateria">
-<meta property="og:description" content="Strumento per confrontare mantecatori, pastorizzatori, mixer, frigoriferi e abbattitori per gelateria: aziende, caratteristiche tecniche e prezzi indicativi a confronto">
+<meta property="og:description" content="Archivio di mantecatori, pastorizzatori, mixer, frigoriferi e abbattitori per gelateria: aziende, caratteristiche tecniche e prezzi indicativi">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gelateriaattrezzature.com/">
 <link rel="manifest" href="manifest.json">
@@ -138,7 +138,7 @@
   @media (max-width: 480px){ .lang-switch{ top:8px; right:8px; } .lang-btn{ padding:4px 8px; font-size:0.68rem; } }
   html{ scroll-behavior: smooth; }
   .quick-nav{
-    display:flex; gap:8px; overflow-x:auto; -webkit-overflow-scrolling:touch;
+    display:flex; flex-direction:column; gap:8px;
     background: rgba(40,92,133,0.94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
     padding: 10px 14px; position: sticky; top:0; z-index: 50;
     box-shadow: 0 6px 18px rgba(20,35,50,0.2); scrollbar-width: thin;
@@ -156,6 +156,8 @@
   .quick-nav a.nav-usato{ background: rgba(60,145,90,0.55); border-color: rgba(60,145,90,0.9); }
   .quick-nav a.nav-usato-aziende{ background: rgba(190,120,40,0.55); border-color: rgba(190,120,40,0.9); }
   .quick-nav a.nav-arredamento{ background: rgba(90,90,150,0.55); border-color: rgba(90,90,150,0.9); }
+  .quick-nav .nav-row{ display:flex; gap:8px; overflow-x:auto; -webkit-overflow-scrolling:touch; scrollbar-width:thin; }
+  .quick-nav a.nav-accessori{ background: rgba(200,110,60,0.55); border-color: rgba(200,110,60,0.9); }
   .quick-nav a.nav-vetrine{ background: rgba(35,130,150,0.55); border-color: rgba(35,130,150,0.9); }
   .quick-nav a.nav-abbattitori{ background: rgba(60,110,190,0.55); border-color: rgba(60,110,190,0.9); }
   .quick-nav a.nav-video{ background: rgba(180,60,140,0.55); border-color: rgba(180,60,140,0.9); }
@@ -375,7 +377,7 @@
   </div>
   <span class="badge-proto" data-i18n="badge">dati dal tuo archivio reale</span>
   <h1 data-i18n="title">🧊 Confronto Attrezzature Gelateria</h1>
-  <p data-i18n="subtitle">Scegli una categoria, poi confronta un prodotto Base con due alternative (A e B) — azienda, prodotto, caratteristiche e la tua valutazione, fianco a fianco.</p>
+  <p data-i18n="subtitle">Archivio indipendente di attrezzature per gelateria — aziende, prodotti, caratteristiche e valutazioni.</p>
   <p class="badge-proto" data-i18n="badgeIndipendente" style="margin-top:2px;">🆓 Portale indipendente, gratuito e senza sponsorizzazioni</p>
   <div class="stat-row">
     <div class="stat-pill"><b id="statAziende">–</b><span data-i18n="statAziendeLabel">aziende</span></div>
@@ -390,22 +392,28 @@
 </header>
 
 <nav class="quick-nav" id="quickNav" aria-label="Navigazione rapida">
-  <a href="#confrontaSection" class="nav-confronta" data-i18n="navConfronta">⚖️ Confronta</a>
-  <a href="#archiveSection" class="nav-archivio" data-i18n="navArchivio">📚 Archivio</a>
-  <a class='nav-chisono' data-i18n='navChiSiamo' href='/chi-sono'>👤 Chi sono</a>
-  <a class='nav-aziende' data-i18n='navAziende' href='/aziende'>🏢 Aziende</a>
-  <a class='nav-notizie' data-i18n='navNotizie' href='/notizie'>📰 Notizie</a>
-  <a class='nav-usato' data-i18n='navUsato' href='/usato'>♻️ Usato</a>
-  <a class='nav-usato-aziende' data-i18n='navUsatoAziende' href='/aziende-usato'>🏬 Rivenditori Usato</a>
-  <a class='nav-arredamento' data-i18n='navArredamento' href='/arredamento-gelateria'>🪑 Arredamento</a>
-  <a class='nav-vetrine' href='/vetrine-gelato'>🧊 Vetrine</a>
-  <a class='nav-abbattitori' href='/abbattitori-gelato'>❄️ Abbattitori</a>
-  <a class='nav-video' href='/video-demo'>🎬 Video</a>
+  <div class="nav-row">
+    <a href="#archiveSection" class="nav-archivio" data-i18n="navArchivio">📚 Archivio</a>
+    <a class='nav-chisono' data-i18n='navChiSiamo' href='/chi-sono'>👤 Chi sono</a>
+    <a class='nav-aziende' data-i18n='navAziende' href='/aziende'>🏢 Aziende</a>
+    <a class='nav-notizie' data-i18n='navNotizie' href='/notizie'>📰 Notizie</a>
+    <a class='nav-usato' data-i18n='navUsato' href='/usato'>♻️ Usato</a>
+    <a class='nav-usato-aziende' data-i18n='navUsatoAziende' href='/aziende-usato'>🏬 Rivenditori Usato</a>
+    <a class='nav-vetrine' href='/vetrine-gelato'>🧊 Vetrine</a>
+    <a class='nav-abbattitori' href='/abbattitori-gelato'>❄️ Abbattitori</a>
+    <a class='nav-video' href='/video-demo'>🎬 Video</a>
+  </div>
+  <div class="nav-row">
+    <a class='nav-arredamento' data-i18n='navArredamento' href='/arredamento-gelateria'>🪑 Arredamento</a>
+    <a class='nav-accessori' data-i18n='navAccessori' href='/accessori-gelateria'>🧰 Accessori</a>
+  </div>
 </nav>
 <p class="construction-note" data-i18n="constructionNote">🚧 Sito in costruzione</p>
 
 <main>
 
+  <!-- Strumento di confronto rimosso (nascosto, il codice resta per compatibilità con lo script) -->
+  <div id="compareToolHidden" hidden style="display:none" aria-hidden="true">
   <!-- STEP 1 -->
   <section class="card" id="confrontaSection">
     <h2><span class="step-num">1</span> <span data-i18n="step1Title">Scegli la categoria da confrontare</span></h2>
@@ -413,7 +421,6 @@
       <label for="categoriaSelect" data-i18n="categoriaProdotto">Categoria prodotto</label>
       <select id="categoriaSelect"></select>
     </div>
-    <p style="margin:10px 0 0; font-size:0.82rem;"><a class='source-link' data-i18n='linkGuidaMantecatori' href='/mantecatori-gelato'>📖 Non sai da dove iniziare? Leggi la guida alla scelta del mantecatore</a></p>
   </section>
 
   <!-- STEP 2 -->
@@ -454,9 +461,12 @@
     <div class="hint" data-i18n-html="step3Hint">Tutti i dati mostrati vengono da ricerca web pubblica, come nel tuo file originale. Ricordati di <strong>esportare</strong> l'archivio per non perdere le modifiche.</div>
   </section>
 
+  </div>
+
   <!-- ARCHIVE -->
   <section class="card" id="archiveSection">
     <h2 data-i18n="archiveTitle">📚 Archivio attrezzature</h2>
+    <p style="margin:0 0 12px; font-size:0.82rem;"><a class='source-link' data-i18n='linkGuidaMantecatori' href='/mantecatori-gelato'>📖 Non sai da dove iniziare? Leggi la guida alla scelta del mantecatore</a></p>
     <div class="archive-toolbar">
       <div class="field"><label data-i18n="cerca">Cerca</label><input type="text" id="searchArchive" placeholder="Azienda, prodotto, dettagli…" data-i18n-ph="cercaPh"></div>
       <div class="field" style="max-width:220px;"><label data-i18n="filtraCategoria">Filtra categoria</label><select id="filterArchiveCategoria"><option value="" data-i18n="tutte">Tutte</option></select></div>
@@ -634,7 +644,7 @@ const I18N = {
     badge: "dati dal tuo archivio reale",
     badgeIndipendente: "🆓 Portale indipendente, gratuito e senza sponsorizzazioni",
     title: "🧊 Confronto Attrezzature Gelateria",
-    subtitle: "Scegli una categoria, poi confronta due prodotti — azienda, prodotto, caratteristiche e la tua valutazione, fianco a fianco.",
+    subtitle: "Archivio indipendente di attrezzature per gelateria — aziende, prodotti, caratteristiche e valutazioni.",
     statAziendeLabel: "aziende",
     statProdottiLabel: "prodotti",
     statCategorieLabel: "categorie",
@@ -662,6 +672,7 @@ const I18N = {
     navUsato: "♻️ Usato",
     navUsatoAziende: "🏬 Rivenditori Usato",
     navArredamento: "🪑 Arredamento",
+    navAccessori: "🧰 Accessori",
     notizieTitle: "📰 Notizie",
     notizieText: "Presto qui troverai notizie e aggiornamenti dal mondo del gelato artigianale. Torna a trovarci!",
     btnShowExtraTools: "🧰 Mostra taratura vetrina, postazioni e documenti",
@@ -895,7 +906,7 @@ const I18N = {
     badge: "Daten aus deinem echten Archiv",
     badgeIndipendente: "🆓 Unabhängiges, kostenloses Portal ohne Sponsoring",
     title: "🧊 Eismaschinen-Vergleich",
-    subtitle: "Wähle eine Kategorie und vergleiche dann zwei Produkte — Firma, Produkt, Eigenschaften und deine Bewertung, Seite an Seite.",
+    subtitle: "Unabhängiges Archiv für Eisdielen-Ausrüstung — Firmen, Produkte, Eigenschaften und Bewertungen.",
     statAziendeLabel: "Firmen",
     statProdottiLabel: "Produkte",
     statCategorieLabel: "Kategorien",
@@ -923,6 +934,7 @@ const I18N = {
     navUsato: "♻️ Gebraucht",
     navUsatoAziende: "🏬 Gebraucht-Händler",
     navArredamento: "🪑 Einrichtung",
+    navAccessori: "🧰 Zubehör",
     notizieTitle: "📰 News",
     notizieText: "Hier findest du bald Neuigkeiten und Updates aus der Welt des handwerklichen Eises. Schau bald wieder vorbei!",
     btnShowExtraTools: "🧰 Vitrinen-Abstimmung, Stationen und Dokumente anzeigen",
@@ -1155,7 +1167,7 @@ const I18N = {
     badge: "data from your real archive",
     badgeIndipendente: "🆓 Independent, free portal with no sponsorships",
     title: "🧊 Gelato Equipment Comparison",
-    subtitle: "Choose a category, then compare two products — company, product, features and your rating, side by side.",
+    subtitle: "Independent archive of ice cream shop equipment — companies, products, features and ratings.",
     statAziendeLabel: "companies",
     statProdottiLabel: "products",
     statCategorieLabel: "categories",
@@ -1183,6 +1195,7 @@ const I18N = {
     navUsato: "♻️ Used",
     navUsatoAziende: "🏬 Used Dealers",
     navArredamento: "🪑 Furnishings",
+    navAccessori: "🧰 Accessories",
     notizieTitle: "📰 News",
     notizieText: "News and updates from the world of artisan gelato are coming soon. Check back later!",
     btnShowExtraTools: "🧰 Show showcase calibration, stations and documents",
@@ -1422,7 +1435,7 @@ function translateStatic(){
   document.title = titleByLang[LANG] || titleByLang.it;
   const metaDesc = document.querySelector('meta[name="description"]');
   const descByLang = {
-    it: 'Strumento per confrontare mantecatori, pastorizzatori, mixer, frigoriferi e abbattitori per gelateria: aziende, caratteristiche tecniche e prezzi indicativi a confronto',
+    it: 'Archivio di mantecatori, pastorizzatori, mixer, frigoriferi e abbattitori per gelateria: aziende, caratteristiche tecniche e prezzi indicativi',
     de: 'Werkzeug zum Vergleich von Rührmaschinen, Pasteurisierern, Mixern, Kühlschränken und Schockfrostern für Eisdielen: Firmen, technische Merkmale und Richtpreise im Vergleich',
     en: 'Tool to compare batch freezers, pasteurizers, mixers, fridges and blast chillers for gelato shops: companies, technical specs and indicative prices side by side',
   };
