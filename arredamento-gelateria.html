@@ -162,6 +162,11 @@
   .company-card .cdesc{ font-size:0.85rem; line-height:1.5; margin-bottom:8px; }
   .company-card a.clink{ font-size:0.8rem; font-weight:700; color: var(--pistachio-dark); text-decoration:none; }
   .company-card a.clink:hover{ text-decoration:underline; }
+  .arr-gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; margin-top:14px; }
+  .arr-gallery img{ width:100%; aspect-ratio:4/3; object-fit:cover; display:block; border-radius: var(--radius-sm); border:1px solid var(--line); }
+  .arr-gallery img.wide{ grid-column:auto; }
+  .arr-credit{ font-size:0.85rem; color: var(--ink-soft); margin-top:12px; }
+  .arr-credit a{ font-weight:700; color: var(--pistachio-dark); }
   .company-card.featured{ border:2px solid #b23a2e; background:#fbeee8; grid-column:1/-1; }
 </style>
 </head>
@@ -212,6 +217,18 @@
       <li><strong>Arredo sala e sedute</strong> — tavoli, sedie e complementi d'arredo per l'area di consumo, quando presente.</li>
       <li><strong>Insegne e allestimento vetrina</strong> — insegna luminosa, grafica di facciata, vetrofanie: la prima cosa che il cliente vede dalla strada.</li>
     </ul>
+  </section>
+
+  <section class="card">
+    <h2>📸 Arredo outdoor: alcuni esempi</h2>
+    <div class="arr-gallery">
+      <img src="arredamento-antiga-1.jpg" alt="Dehors di un locale con tavoli in marmo chiaro, sedute intrecciate con struttura marrone, ulivi e fioriere bianche" loading="lazy">
+      <img src="arredamento-antiga-2.jpg" alt="Terrazza sul lago con ombrelloni color crema, tavoli e sedie chiare" loading="lazy">
+      <img src="arredamento-antiga-3.jpg" alt="Dehors di una gelateria con ombrelloni, tavolini rotondi e sedie pieghevoli con cuscini rossi, fioriere sul bordo" loading="lazy">
+      <img src="arredamento-antiga-4.jpg" alt="Piazza pedonale con tavolini rotondi, poltroncine intrecciate color tortora e grande ombrellone" loading="lazy">
+      <img src="arredamento-antiga-5.jpg" alt="Dehors con tavolini rotondi, poltroncine intrecciate e ombrelloni in una via del centro" loading="lazy">
+    </div>
+    <p class="arr-credit">Foto provenienti da <a href="https://www.antiga.it/" target="_blank" rel="noopener">Antiga TV</a> · <a href="https://www.antiga.it/" target="_blank" rel="noopener">🌐 antiga.it</a></p>
   </section>
 
   <section class="card">
