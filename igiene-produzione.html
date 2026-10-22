@@ -163,17 +163,6 @@
     .card:hover{ transform: translateY(-6px); box-shadow: var(--shadow-lg); }
   }
 </style>
-<style>
-.actions-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; align-items:center;}
-#regole-igiene .btn{display:inline-flex; align-items:center; gap:6px; border-radius:10px; font-weight:700; font-size:0.9rem; cursor:pointer; padding:10px 18px; font-family:inherit; background:transparent; color:#2a6a73; border:1.5px solid #2a6a73;}
-#regole-igiene .btn:hover{background:rgba(42,106,115,0.1);}
-.doc-panel{display:none; margin-top:16px; background:#fffaf3; border-radius:var(--radius); padding:16px 18px; border:1px solid var(--line);}
-.doc-panel.open{display:block;}
-.doc-panel h3{font-size:0.95rem; margin:14px 0 4px;}
-.doc-panel h3:first-child{margin-top:0;}
-.doc-panel ul{margin:4px 0 0; padding-left:20px;}
-.doc-panel li{font-size:0.85rem; line-height:1.5; margin-bottom:2px;}
-</style>
 </head>
 <body>
 <div class="bg-photo" aria-hidden="true"></div>
@@ -243,140 +232,19 @@
     </ul>
     <p>Nessuno di questi accessori sostituisce un piano di sanificazione strutturato (HACCP), ma un investimento di poche decine di euro in strumenti giusti riduce di molto le occasioni in cui la contaminazione nasce da un dettaglio pratico trascurato, non da una vera mancanza di attenzione.</p>
   </section>
-  <section class="card" id="regole-igiene">
-    <h3 style="margin:0 0 6px; font-size:1.05rem;">📄 Regole di igiene per la produzione di gelato</h3>
-    <p class="hint" style="margin-top:0;">Regole per la prevenzione dei batteri nella produzione di gelato artigianale — disponibile in italiano e in tedesco.</p>
-    <div class="actions-row">
-      <button class="btn outline" id="btnDocIT" onclick="toggleDocPanel('it')">📄 Apri in italiano</button>
-      <button class="btn outline" id="btnDocDE" onclick="toggleDocPanel('de')">📄 Auf Deutsch öffnen</button>
-    </div>
-
-    <div class="doc-panel" id="docPanelIT">
-      <h3>1. Utilizzare materie prime sicure</h3>
-      <ul>
-        <li>Acquistare latte, panna, uova e altri ingredienti solo da fornitori certificati.</li>
-        <li>Controllare regolarmente le date di scadenza e le condizioni di conservazione.</li>
-        <li>Non utilizzare ingredienti deteriorati o confezioni danneggiate.</li>
-      </ul>
-      <h3>2. Corretta pastorizzazione della miscela</h3>
-      <ul>
-        <li>Rispettare i tempi e le temperature di pastorizzazione prescritti.</li>
-        <li>La pastorizzazione riduce notevolmente la carica batterica ed è uno dei passaggi più importanti.</li>
-      </ul>
-      <h3>3. Raffreddamento rapido</h3>
-      <ul>
-        <li>Raffreddare rapidamente la miscela a circa 4 °C dopo la pastorizzazione.</li>
-        <li>Evitare che il prodotto rimanga a lungo nella fascia di temperatura tra 5 °C e 60 °C.</li>
-      </ul>
-      <h3>4. Rispettare la catena del freddo</h3>
-      <ul>
-        <li>Conservare sempre le miscele e il gelato finito alle temperature prescritte.</li>
-        <li>Controllare e documentare regolarmente le temperature.</li>
-      </ul>
-      <h3>5. Igiene personale del personale</h3>
-      <ul>
-        <li>Lavarsi le mani regolarmente e accuratamente.</li>
-        <li>Indossare abiti da lavoro puliti e copricapo.</li>
-        <li>Il personale malato non deve lavorare a contatto con gli alimenti.</li>
-      </ul>
-      <h3>6. Pulizia e disinfezione delle attrezzature</h3>
-      <ul>
-        <li>Pulire e disinfettare quotidianamente le attrezzature.</li>
-        <li>Rispettare i piani di pulizia HACCP.</li>
-      </ul>
-      <h3>7. Evitare la contaminazione crociata</h3>
-      <ul>
-        <li>Tenere separati gli ingredienti crudi dai prodotti pronti al consumo.</li>
-        <li>Utilizzare utensili separati.</li>
-        <li>Conservare separatamente gli allergeni.</li>
-      </ul>
-      <h3>8. Controllare la qualità dell'acqua</h3>
-      <ul>
-        <li>Utilizzare esclusivamente acqua potabile.</li>
-        <li>Effettuare la manutenzione regolare di tubazioni e filtri.</li>
-      </ul>
-      <h3>9. Effettuare controlli microbiologici</h3>
-      <ul>
-        <li>Analisi di laboratorio periodiche su gelato, superfici, attrezzature e acqua.</li>
-      </ul>
-      <h3>10. Applicare il sistema HACCP</h3>
-      <ul>
-        <li>Monitorare i punti critici di controllo.</li>
-        <li>Documentare temperature, pulizie e controlli.</li>
-        <li>Formare regolarmente il personale.</li>
-      </ul>
-    </div>
-
-    <div class="doc-panel" id="docPanelDE">
-      <h3>1. Sichere Rohstoffe verwenden</h3>
-      <ul>
-        <li>Milch, Sahne, Eier und andere Zutaten nur von zertifizierten Lieferanten beziehen.</li>
-        <li>Verfallsdaten und Lagerbedingungen regelmäßig kontrollieren.</li>
-        <li>Keine verdorbenen Zutaten oder beschädigten Verpackungen verwenden.</li>
-      </ul>
-      <h3>2. Korrekte Pasteurisierung der Eismischung</h3>
-      <ul>
-        <li>Die vorgeschriebenen Pasteurisierungszeiten und -temperaturen einhalten.</li>
-        <li>Die Pasteurisierung reduziert die Keimbelastung erheblich und ist einer der wichtigsten Schritte.</li>
-      </ul>
-      <h3>3. Schnelles Abkühlen</h3>
-      <ul>
-        <li>Die Mischung nach der Pasteurisierung schnell auf etwa 4 °C herunterkühlen.</li>
-        <li>Vermeiden, dass das Produkt längere Zeit im Temperaturbereich zwischen 5 °C und 60 °C bleibt.</li>
-      </ul>
-      <h3>4. Kühlkette einhalten</h3>
-      <ul>
-        <li>Eismischungen und fertiges Speiseeis stets bei den vorgeschriebenen Temperaturen lagern.</li>
-        <li>Temperaturen regelmäßig kontrollieren und dokumentieren.</li>
-      </ul>
-      <h3>5. Persönliche Hygiene des Personals</h3>
-      <ul>
-        <li>Hände regelmäßig und gründlich waschen.</li>
-        <li>Saubere Arbeitskleidung und Kopfbedeckung tragen.</li>
-        <li>Erkrankte Mitarbeiter dürfen nicht mit Lebensmitteln arbeiten.</li>
-      </ul>
-      <h3>6. Reinigung und Desinfektion der Geräte</h3>
-      <ul>
-        <li>Geräte täglich reinigen und desinfizieren.</li>
-        <li>HACCP-Reinigungspläne einhalten.</li>
-      </ul>
-      <h3>7. Kreuzkontamination vermeiden</h3>
-      <ul>
-        <li>Rohe Zutaten von verzehrfertigen Produkten getrennt halten.</li>
-        <li>Separate Utensilien verwenden.</li>
-        <li>Allergene getrennt lagern.</li>
-      </ul>
-      <h3>8. Wasserqualität kontrollieren</h3>
-      <ul>
-        <li>Ausschließlich Trinkwasser verwenden.</li>
-        <li>Leitungen und Filter regelmäßig warten.</li>
-      </ul>
-      <h3>9. Mikrobiologische Kontrollen durchführen</h3>
-      <ul>
-        <li>Regelmäßige Laboruntersuchungen von Speiseeis, Oberflächen, Geräten und Wasser.</li>
-      </ul>
-      <h3>10. HACCP-System anwenden</h3>
-      <ul>
-        <li>Kritische Kontrollpunkte überwachen.</li>
-        <li>Temperaturen, Reinigungen und Kontrollen dokumentieren.</li>
-        <li>Mitarbeiter regelmäßig schulen.</li>
-      </ul>
-    </div>
-  </section>
-
   <section class="card">
     <h3 style="margin:0 0 6px; font-size:1.05rem;">🏢 Aziende</h3>
     <p style="font-size:0.9rem; color:var(--ink-soft); margin:0 0 16px;">Produttori e rivenditori di prodotti per pulizia e igiene professionale.</p>
     <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px;">
+      <div style="border:2px solid #2a6a73; border-radius:var(--radius); padding:14px; background:#eef7f8;">
+        <h3 style="margin:0 0 6px; font-size:1rem;">Diversey (Solenis)</h3>
+        <div style="font-size:0.82rem; color:var(--ink-soft); margin-bottom:8px;">Sede non specificata nelle fonti consultate</div>
+        <div style="font-size:0.85rem; line-height:1.5;"><div>Marchio di detergenti e igiene professionale, oggi parte di Solenis (acquisizione completata a luglio 2023).</div><div style="margin-top:6px;">🌐 <a href="https://products.solenis.com/it/" target="_blank" rel="noopener">products.solenis.com</a></div></div>
+      </div>
       <div style="border:1px solid var(--line); border-radius:var(--radius); padding:14px; background:var(--cream-2);">
         <h3 style="margin:0 0 6px; font-size:1rem;">Ecolab</h3>
         <div style="font-size:0.82rem; color:var(--ink-soft); margin-bottom:8px;">St. Paul (Minnesota), Stati Uniti — 1923</div>
         <div style="font-size:0.85rem; line-height:1.5;"><div>Gruppo statunitense di igiene e sanificazione professionale.</div><div style="margin-top:6px;">🌐 <a href="https://www.ecolab.com/" target="_blank" rel="noopener">ecolab.com</a></div></div>
-      </div>
-      <div style="border:1px solid var(--line); border-radius:var(--radius); padding:14px; background:var(--cream-2);">
-        <h3 style="margin:0 0 6px; font-size:1rem;">Diversey (Solenis)</h3>
-        <div style="font-size:0.82rem; color:var(--ink-soft); margin-bottom:8px;">Sede non specificata nelle fonti consultate</div>
-        <div style="font-size:0.85rem; line-height:1.5;"><div>Marchio di detergenti e igiene professionale, oggi parte di Solenis (acquisizione completata a luglio 2023).</div><div style="margin-top:6px;">🌐 <a href="https://products.solenis.com/it/" target="_blank" rel="noopener">products.solenis.com</a></div></div>
       </div>
       <div style="border:1px solid var(--line); border-radius:var(--radius); padding:14px; background:var(--cream-2);">
         <h3 style="margin:0 0 6px; font-size:1rem;">HWR-Chemie GmbH</h3>
@@ -570,14 +438,6 @@ translateStatic();
   // invisibile.
   setTimeout(revealAll, 1500);
 })();
-</script>
-<script>
-function toggleDocPanel(lang){
-  var panel=document.getElementById(lang==='it'?'docPanelIT':'docPanelDE');
-  var other=document.getElementById(lang==='it'?'docPanelDE':'docPanelIT');
-  if(other) other.classList.remove('open');
-  if(panel){ panel.classList.toggle('open'); if(panel.classList.contains('open')) panel.scrollIntoView({behavior:'smooth',block:'nearest'}); }
-}
 </script>
 </body>
 </html>
